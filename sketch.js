@@ -25,7 +25,7 @@ function setup() {
   polygon = Bodies.circle(50, 200, 20); 
   World.add(world,polygon) 
   
-  slingShot = new SlingShot(polygon.body,{x:100, y:250})
+  slingShot = new SlingShot(this.polygon,{x:100, y:250})
   //level one
   block1 = new Block(300,275,30,40);
   block2 = new Block(330,275,30,40);
@@ -115,7 +115,7 @@ function draw() {
 
 function mouseDragged(){
   if (gameState!=="launched"){
-      Matter.Body.setPosition(bird.body, {x: mouseX , y: mouseY});
+      Matter.Body.setPosition(this.polygon, {x: mouseX , y: mouseY});
   }
 }
 
